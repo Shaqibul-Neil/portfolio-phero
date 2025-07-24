@@ -1,0 +1,369 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gradient-green: linear-gradient(
+    90deg,
+    rgb(84, 207, 104) 0.01%,
+    rgb(0, 130, 122) 100.26%
+  );
+  --bg-secondary: linear-gradient(
+    rgba(238, 224, 255, 0.1) 0%,
+    rgba(143, 134, 153, 0) 100%
+  );
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #010313;
+  font-size: 16px;
+  color: #cec7c7de;
+  font-weight: 400;
+}
+
+/* header start */
+header {
+  margin-bottom: 120px;
+  background-image: url(../images/developer.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+}
+
+/* nav start */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: transparent;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+.nav-title {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.nav-title span {
+  background: var(--gradient-green);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+nav ul {
+  display: flex;
+  gap: 45px;
+  align-items: center;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  color: #389648;
+}
+.btn,
+.btn-contact {
+  background-image: var(--gradient-green);
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px 35px;
+  border-radius: 5px;
+  transition: 0.33s;
+}
+.btn:hover,
+.btn-contact:hover {
+  background-image: none;
+  background-color: #fff;
+  color: #389648;
+}
+.btn i,
+.btn-contact i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+/* nav end */
+/* banner start */
+.banner {
+  display: flex;
+  padding: 20px 10%;
+  justify-content: space-between;
+  align-items: center;
+}
+.banner-content {
+}
+.banner-greet {
+  font-size: 35px;
+  font-weight: 600;
+  color: #fff;
+}
+.banner-title {
+  font-size: 65px;
+  font-weight: 900;
+  color: #fff;
+}
+.banner-description {
+  margin: 25px 0;
+  line-height: 30px;
+}
+.btn-contact {
+  margin-left: 40px;
+  background-image: none;
+  background-color: transparent;
+  border: 1px solid #389648;
+}
+
+.banner-img {
+  width: 580px;
+}
+.banner-img img {
+  width: 100%;
+}
+/* banner end */
+/* header end */
+/* about start */
+main {
+  margin: 20px 10%;
+}
+.about {
+  margin-bottom: 120px;
+  padding: 80px 120px;
+  border-radius: 5px;
+  text-align: center;
+  background: var(--bg-secondary);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.about::before {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: linear-gradient(
+    90deg,
+    rgba(84, 207, 104, 0.15),
+    rgba(0, 130, 122, 0.08),
+    rgba(84, 207, 104, 0.15)
+  );
+  transform-origin: center;
+  animation: spin-glow 8s linear infinite;
+  z-index: -1;
+  filter: blur(40px);
+  border-radius: 15px;
+}
+@keyframes spin-glow {
+  0% {
+    transform: rotate(0deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+.section-title {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 900;
+}
+.section-description,
+.skill-description {
+  margin: 45px 0 40px;
+  line-height: 30px;
+}
+.about-items {
+  display: flex;
+  justify-content: space-around;
+}
+.item-title {
+  color: #fff;
+}
+.item-description {
+  margin-top: 10px;
+  font-weight: bold;
+}
+/* about end */
+/* skill start */
+.skill {
+  margin-bottom: 120px;
+  border-radius: 5px;
+  text-align: center;
+}
+.skill-details {
+  padding: 20px 120px;
+}
+.skill-items {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+}
+.skill-item {
+  padding: 40px 20px;
+  position: relative;
+  background: #060c21;
+  text-align: left;
+  border-radius: 15px;
+  max-width: 400px;
+  max-height: 500px;
+  box-shadow: 4px 4px 15px 1px #38964836;
+}
+.glass {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 50%;
+  background: #060c21;
+  display: block;
+  pointer-events: none;
+  z-index: -1;
+}
+.skill-item::before,
+.skill-item::after {
+  content: "";
+  border-radius: 15px;
+  position: absolute;
+  inset: -1.5px;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--angle),
+    #060c21,
+    #060c21,
+    #060c21,
+    #389648,
+    #060c21,
+    #060c21,
+    #060c21
+  );
+  animation: glowing-border 5.5s linear infinite;
+}
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 53deg;
+  inherits: false;
+}
+
+@keyframes glowing-border {
+  from {
+    --angle: 53deg;
+  }
+
+  to {
+    --angle: 413deg;
+  }
+}
+
+.skill-title {
+  margin: 20px 0;
+  font-size: 20px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.skill-item-description {
+  line-height: 28px;
+}
+/* skill end */
+
+/* summary start */
+.summary {
+  margin-bottom: 120px;
+  text-align: center;
+}
+.summary-items {
+  display: flex;
+  margin: 80px 0;
+  text-align: left;
+  gap: 150px;
+  justify-content: space-between;
+}
+.summary-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffff;
+}
+.sum1 {
+  padding: 0 40px 20px 0;
+  border-bottom: 1px solid rgba(84, 207, 104, 0.15);
+}
+.sum_title {
+  margin: 40px 0 20px;
+  font-size: 25px;
+  font-weight: bold;
+  color: #ffff;
+}
+.sum-desc {
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffff;
+}
+.sum-content {
+}
+/* summary end */
+/* footer start */
+footer {
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.contact {
+  margin: 20px 10%;
+  padding: 100px 0 50px;
+  display: flex;
+  text-align: left;
+  gap: 250px;
+  justify-content: space-between;
+}
+
+.connect-desc {
+  margin: 40px 0;
+}
+.connect ul {
+  display: flex;
+  gap: 20px;
+}
+.connect ul li {
+  list-style: none;
+}
+.connect ul li a i {
+  font-size: 20px;
+  color: #389648;
+  transition: all 0.3s;
+}
+.connect ul li a i:hover {
+  color: #fff;
+}
+.input-form {
+  margin: 40px 0 0;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  width: 461px;
+  height: 64px;
+  padding: 25px;
+}
+.textarea {
+  margin: 40px 0;
+  width: 461px;
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  padding: 25px;
+}
+/* footer end */
